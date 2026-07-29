@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class parameterpassing{
+    public:
+    void callbyvalue(int x){
+        x=x+10;
+        cout<<"int call by value : "<<x<<"\n";
+    }
+    void callbyrefrence(int &x){
+        x=x+10;
+        cout<<"inside call by refrence : "<<x<<"\n";
+    }
+    void callbyaddress(int *x){
+        *x=*x+10;
+        cout<<"inside call by address : "<<*x<<"\n";
+    }
+};
+
+int main() {
+    
+    parameterpassing obj;
+    int num=50;
+    
+    cout<<"initial value : "<<num<<"\n";
+    
+    obj.callbyvalue(num);
+    cout<<"after call by value : "<< num<<"\n";
+    
+    obj.callbyrefrence(num);
+    cout<<"after call by refrence : "<< num<<"\n";
+    
+    obj.callbyaddress(&num);
+    cout<<"after call by address : "<< num <<"\n";
+    
+    return 0;
+}
